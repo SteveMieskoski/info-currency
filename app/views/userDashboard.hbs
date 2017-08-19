@@ -3,9 +3,11 @@
 <head>
   <title>User Home</title>
   <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
 
@@ -17,7 +19,9 @@
   <link href="https://fonts.googleapis.com/css?family=Share:400,400i,700,700i" rel="stylesheet">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+          integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+          crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -26,7 +30,7 @@
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span><i class = "fa fa-user"></i></span>
+        <span><i class="fa fa-user"></i></span>
       </button>
       <a target="_blank" href="{{routing.userDashboard.route}}" class="navbar-brand logo">InfoCurrency</a>
     </div>
@@ -48,10 +52,22 @@
                     </p>
                   </div>
                   <div class="col-md-8">
-                    <p class="text-left">{{#if userData.firstname}}<strong>{{userData.firstname}}</strong> {{else}}<strong>User Name</strong> {{/if}}</p>
+                    <p class="text-left">{{#if userData.firstname}}<strong>{{userData.firstname}}</strong> {{else}}
+                      <strong>User Name</strong> {{/if}}</p>
                     <p class="text-left small">{{userData.email}}</p>
                   </div>
                 </div>
+            </li>
+            <li>
+              <div class="navbar-login navbar-login-session">
+                <div class="row">
+                  <div class="col-md-12">
+                    <p>
+                      <button id="showCompletedSurveys" class="flat-butt flat-danger-butt">Show Completed Surveys</button>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </li>
             <li class="divider"></li>
             <li>
@@ -73,55 +89,75 @@
 </div>
 
 <!-- Available Surveys -->
-<div class = "container fluid">
-  <div class = "row-margin">
+<div class="container fluid">
+  <div class="row-margin">
   </div>
-  <div class = "row">
-    <div class = "col-md-1">
+  <div class="row">
+    <div class="col-md-1">
     </div>
-    <div class = "col-md-6">
-      <div class = "main main-container">
+    <div class="col-md-6">
+      <div class="main main-container">
         <h2>Available Surveys</h2>
         <hr>
-      <!--  <div class="col">-->
-          <a href="#surveyModal1" class="col portfolio-link" data-toggle="modal">
-            Demographic Survey
-          </a>
-      <!--  </div>
-        <div class = "col">-->
-          <a href="#surveyModal2" class="col portfolio-link" data-toggle="modal">
-            Interests Survey
-          </a>
-      <!--  </div>-->
+        <!--  <div class="col">-->
+      <span id="surveyCheckOne" style="display: none;">{{bar userData}}</span>
+        <a id="survey-button-one" href="#surveyModal1" class="col portfolio-link" data-toggle="modal">
+          Demographic Survey
+        </a>
+
+        <!--  </div>
+		  <div class = "col">-->
+        <span id="surveyCheck" style="display: none;">{{foo userData}}</span>
+        <a id="survey-button-two" href="#surveyModal2" class="col portfolio-link" data-toggle="modal">
+          Interests Survey
+        </a>
+        <!--  </div>-->
       </div>
     </div>
 
-    <div class = "col-md-4">
-      <div class = "main main-container">
+    <div class="col-md-4">
+      <div class="main main-container">
         <h2>Account Balance</h2>
         <hr>
-        <h2><img src = "assets/images/wallet.png" class= "wallet">$0.00</h2>
+        <h2><img src="assets/images/wallet.png" class="wallet">$0.00</h2>
       </div>
-      <div class = "main main-container">
+      <div class="main main-container">
         <h2>Your InfoCurrency Profile</h2>
         <hr>
-<!--{{#if userData.age}} <h4>Age: <span>{{userData.age}}</span></h4>{{/if}}
-        {{#if userData.status}} <h4>Status <span>{{userData.status}}</span></h4> {{else}} {{/if}}
-        {{#if userData.income}} <h4>Income <span>{{userData.income}}</span></h4> {{else}} {{/if}}
-        {{#if userData.state}} <h4>Location <span>{{userData.state}}</span></h4> {{else}} {{/if}}-->
         <h4>Age: <span>{{userData.age}}</span></h4>
-        <h4>Status <span>{{userData.status}}</span></h4>
-        <h4>Income <span>{{userData.income}}</span></h4>
-        <h4>Location <span>{{userData.state}}</span></h4>
-        <h4>Interests</h4>
-        {{#if userData.music}} <h5>{{userData.music}}</h5>{{/if}}
-        {{#if userData.movies}}<h5>{{userData.movies}}</h5>{{/if}}
-        {{#if userData.sports}}<h5>{{userData.sports}}</h5>{{/if}}
-        {{#if userData.fashion}}<h5>{{userData.fashion}}</h5>{{/if}}
-        {{#if userData.social}}<h5>{{userData.social}}</h5>{{/if}}
+        <h4>Status: <span>{{userData.status}}</span></h4>
+        <h4>Income: <span>{{userData.income}}</span></h4>
+        <h4>Location: <span>{{userData.zip}}</span></h4>
+        <h4>Interests: </h4>
+        <table>
+          <tr>
+            {{#if userData.music}}
+              <td class="interests"><i class="fa fa-music fa-6x"></i></td>{{/if}}
+            {{#if userData.movies}}
+              <td class="interests"><i class="fa fa-ticket fa-6x"></i></td>{{/if}}
+            {{#if userData.sports}}
+              <td class="interests"><i class="fa fa-futbol-o fa-6x"></i></td>{{/if}}
+            {{#if userData.fashion}}
+              <td class="interests"><i class="fa fa-cutlery fa-6x"></i></td>{{/if}}
+            {{#if userData.social}}
+              <td class="interests"><i class="fa fa-facebook fa-6x"></i></td>{{/if}}
+          </tr>
+          <tr>
+            {{#if userData.music}}
+              <td class="interests">Music</td>{{/if}}
+            {{#if userData.movies}}
+              <td class="interests">Movies</td>{{/if}}
+            {{#if userData.sports}}
+              <td class="interests">Sports</td>{{/if}}
+            {{#if userData.fashion}}
+              <td class="interests">Food</td>{{/if}}
+            {{#if userData.social}}
+              <td class="interests">Social</td>{{/if}}
+          </tr>
+        </table>
       </div>
     </div>
-    <div class = "col-md-1">
+    <div class="col-md-1">
     </div>
   </div>
 </div>
@@ -139,102 +175,114 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
           <div class="modal-body">
-            <div class = "text-center">
-              <h2>Answer a Few Basic Questions to Start</h2>
-              <hr>
-              <h4 class = "row">What Is Your Gender?</h4>
-              <form>
+            <form name="dForm" class="demoForm" method="post" action="#">
+              <div class="text-center">
+                <h2>Answer a Few Basic Questions to Start</h2>
+                <hr>
+                <h4 class="row">What Is Your Gender?</h4>
+
                 <div class="question text-center">
-                  <input id="man" type="radio" name="gender" value="man" />
+                  <input id="man" type="radio" name="gender" value="man"/>
                   <label class="option man" for="man"></label>
-                  <input id="woman" type="radio" name="gender" value="woman" />
+                  <input id="woman" type="radio" name="gender" value="woman"/>
                   <label class="option woman" for="woman"></label>
-                  <input id="other" type="radio" name="gender" value="other" />
+                  <input id="other" type="radio" name="gender" value="other"/>
                   <label class="option other" for="other"></label>
                 </div>
-             </form>
-              <h4 class = "row">What's Your Age?</h4>
-              <div class="rb">
-                <div class="rb-tab"  name = "age" data-value="18-24">
-                  <div class="rb-spot">
-                    <span class="rb-txt">18-24</span>
+                <!-- </form>-->
+                <h4 class="row">What's Your Age?</h4>
+                <div class="rb">
+                  <div class="rb-tab" name="age" data-value="18-24">
+                    <div class="rb-spot">
+                      <span class="rb-txt">18-24</span>
+                    </div>
                   </div>
-                </div><div class="rb-tab rb-tab-active" name = "age" data-value="25-34">
-                <div class="rb-spot">
-                  <span class="rb-txt">25-34</span>
+                  <div class="rb-tab rb-tab-active" name="age" data-value="25-34">
+                    <div class="rb-spot">
+                      <span class="rb-txt">25-34</span>
+                    </div>
+                  </div>
+                  <div class="rb-tab" name="age" data-value="35-44">
+                    <div class="rb-spot">
+                      <span class="rb-txt">35-44</span>
+                    </div>
+                  </div>
+                  <div class="rb-tab" name="age" data-value="55-64">
+                    <div class="rb-spot">
+                      <span class="rb-txt">45-54</span>
+                    </div>
+                  </div>
+                  <div class="rb-tab" name="age" data-value="65+">
+                    <div class="rb-spot">
+                      <span class="rb-txt">65+</span>
+                    </div>
+                  </div>
                 </div>
-              </div><div class="rb-tab" name = "age" data-value="35-44">
-                <div class="rb-spot">
-                  <span class="rb-txt">35-44</span>
-                </div>
-              </div><div class="rb-tab" name = "age" data-value="55-64">
-                <div class="rb-spot">
-                  <span class="rb-txt">45-54</span>
-                </div>
-              </div><div class="rb-tab" name = "age" data-value="65+">
-                <div class="rb-spot">
-                  <span class="rb-txt">65+</span>
-                </div>
-              </div>
-              </div>
-              <!-- Radio Button Module -->
-              <h4 class = "row">What's Your Income?</h4>
-              <div class="rb">
+                <!-- Radio Button Module -->
+                <h4 class="row">What's Your Income?</h4>
+                <div class="rb">
 
-                <div class="rb-tab" name = "income" data-value="<$39,999k">
-                  <div class="rb-spot">
-                    <span class="rb-txt"><$39,999k</span>
+                  <div class="rb-tab" name="income" data-value="<$39,999k">
+                    <div class="rb-spot">
+                      <span class="rb-txt"><$39,999k</span>
+                    </div>
                   </div>
-                </div><div class="rb-tab rb-tab-active"  name = "income" data-value="$40-50k">
-                <div class="rb-spot">
-                  <span class="rb-txt">$40-50k</span>
-                </div>
-              </div><div class="rb-tab" name = "income" data-value="$50-74,999">
-                <div class="rb-spot">
-                  <span class="rb-txt">$50-74,999</span>
-                </div>
-              </div><div class="rb-tab" name = "income" data-value="$75-99,999">
-                <div class="rb-spot">
-                  <span class="rb-txt">$75-99,999</span>
-                </div>
-              </div><div class="rb-tab" name = "income" data-value="$100-124,999">
-                <div class="rb-spot">
-                  <span class="rb-txt">$100-124,999</span>
-                </div>
-              </div><div class="rb-tab" name = "income" data-value="$125-149,999">
-                <div class="rb-spot">
-                  <span class="rb-txt">$125-149,999</span>
-                </div>
-              </div><div class="rb-tab" name = "income" data-value="$150-249,999">
-                <div class="rb-spot">
-                  <span class="rb-txt">$150-249,999</span>
-                </div>
-              </div><div class="rb-tab" name = "income" data-value="$250<">
-                <div class="rb-spot">
-                  <span class="rb-txt">$250<</span>
+                  <div class="rb-tab rb-tab-active" name="income" data-value="$40-50k">
+                    <div class="rb-spot">
+                      <span class="rb-txt">$40-50k</span>
+                    </div>
+                  </div>
+                  <div class="rb-tab" name="income" data-value="$50-74,999">
+                    <div class="rb-spot">
+                      <span class="rb-txt">$50-74,999</span>
+                    </div>
+                  </div>
+                  <div class="rb-tab" name="income" data-value="$75-99,999">
+                    <div class="rb-spot">
+                      <span class="rb-txt">$75-99,999</span>
+                    </div>
+                  </div>
+                  <div class="rb-tab" name="income" data-value="$100-124,999">
+                    <div class="rb-spot">
+                      <span class="rb-txt">$100-124,999</span>
+                    </div>
+                  </div>
+                  <div class="rb-tab" name="income" data-value="$125-149,999">
+                    <div class="rb-spot">
+                      <span class="rb-txt">$125-149,999</span>
+                    </div>
+                  </div>
+                  <div class="rb-tab" name="income" data-value="$150-249,999">
+                    <div class="rb-spot">
+                      <span class="rb-txt">$150-249,999</span>
+                    </div>
+                  </div>
+                  <div class="rb-tab" name="income" data-value="$250<">
+                    <div class="rb-spot">
+                      <span class="rb-txt">$250<</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              </div>
-            </div>
-            <h4 class = "row">What's Your Living Situation?</h4>
-           <form >
+              <h4 class="row">What's Your Living Situation?</h4>
+              <!-- <form >-->
               <div class="question">
-                <input id="single" type="radio" name="household" value="single" />
+                <input id="single" type="radio" name="household" value="single"/>
                 <label class="option single" for="single"></label>
-                <input id="couple" type="radio" name="household" value="couple" />
+                <input id="couple" type="radio" name="household" value="couple"/>
                 <label class="option couple" for="couple"></label>
-                <input id="family" type="radio" name="household" value="family" />
+                <input id="family" type="radio" name="household" value="family"/>
                 <label class="option family" for="family"></label>
               </div>
             </form>
-            <h4 class = "row">Where Do You Live?</h4>
+            <h4 class="row">Where Do You Live?</h4>
             <div class="form-group">
-              <input type="zip" class="form-control" id="zip-code" placeholder="Zip Code">
+              <input type="number" class="form-control" id="zip-code" placeholder="Zip Code">
             </div>
           </div>
           <span style="display: none;" class="demoUserId">{{userData.id}}</span>
           <input type="submit" class="flat-butt flat-primary-butt Demographic" data-dismiss="modal" value="Submit">
-        <!--  <button type="button" class="flat-butt flat-primary-butt Demographic" data-dismiss="modal"></i>Submit</button>-->
+          <!--  <button type="button" class="flat-butt flat-primary-butt Demographic" data-dismiss="modal"></i>Submit</button>-->
         </div>
       </div>
     </div>
@@ -255,26 +303,31 @@
     <div class="container">
       <div class="row">
         <div class="modal-body">
-          <h2>Let's get an idea of what your interests are</h2> <h3> (Check all that apply)</h3>
-          <div class="interest"><input type="checkbox" id="c1" name="cc" /> <label for="c1"><i class="fa fa-cutlery fa-6x"></i></label>
-          </div>
-          <div class="interest"><input type="checkbox" id="c2" name="cc" />
-            <label for="c2"><i class="fa fa-music fa-6x"></i></label>
-          </div>
-          <div class="interest"><input type="checkbox" id="c3" name="cc" />
-            <label for="c3"><i class="fa fa-ticket fa-6x"></i></label>
-          </div>
-          <div class="interest"><input type="checkbox" id="c4" name="cc" />
-            <label for="c4"><i class="fa fa-futbol-o fa-6x"></i></label>
-          </div>
-          <div class="interest"><input type="checkbox" id="c5" name="cc" />
-            <label for="c5"><i class="fa fa-facebook fa-6x"></i></label>
-          </div>
+          <h2>Let's get an idea of what your interests are</h2>
+          <h3> (Check all that apply)</h3>
+          <form class="interestForm">
+            <div class="interest"><input type="checkbox" id="c1" name="food"/> <label for="c1"><i
+                    class="fa fa-cutlery fa-6x"></i></label>
+            </div>
+            <div class="interest"><input type="checkbox" id="c2" name="music"/>
+              <label for="c2"><i class="fa fa-music fa-6x"></i></label>
+            </div>
+            <div class="interest"><input type="checkbox" id="c3" name="movies"/>
+              <label for="c3"><i class="fa fa-ticket fa-6x"></i></label>
+            </div>
+            <div class="interest"><input type="checkbox" id="c4" name="sports"/>
+              <label for="c4"><i class="fa fa-futbol-o fa-6x"></i></label>
+            </div>
+            <div class="interest"><input type="checkbox" id="c5" name="social"/>
+              <label for="c5"><i class="fa fa-facebook fa-6x"></i></label>
+            </div>
+            <form>
         </div>
 
       </div>
-      <div class = "row">
-        <button type="button" class="flat-butt flat-primary-butt" data-dismiss="modal"></i>Submit</button>
+      <div class="row">
+        <button type="button" class="flat-butt flat-primary-butt InterestsButton" data-dismiss="modal"></i>Submit
+        </button>
       </div>
     </div>
   </div>

@@ -86,7 +86,7 @@ module.exports = function(sequelize, Sequelize) {
 			type: Sequelize.BOOLEAN,
 			validate: {}
 		},
-		fashion: {
+		food: {
 			type: Sequelize.BOOLEAN,
 			validate: {}
 		},

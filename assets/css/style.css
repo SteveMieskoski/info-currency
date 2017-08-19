@@ -12,6 +12,9 @@ body {
     color: white;
     background-color: #4f5e7d;
     min-height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 .box {

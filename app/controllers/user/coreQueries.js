@@ -37,17 +37,17 @@ function detailedQueryParse(query) {
 		} else {
 			// PROBABLY COULD COMBINE THESE TWO forEach STATEMENTS INTO ON IF THEY WILL ALL GET THROWN TOGETHER INTO THE SAME $or Array;
 			if (props === "age") {
-				whereClause['age'] = {"$or": []};
+				whereClause['age'] = {"$or": [], "$and": {"$not": null}};
 				_.forEach(query[props], (item) => {
 					whereClause['age']["$or"].push(item);
 				})
 			} else if (props === "income") {
-				whereClause['income'] = {"$or": []};
+				whereClause['income'] = {"$or": [], "$and": {"$not": null}};
 				_.forEach(query[props], (item) => {
 					whereClause['income']["$or"].push(item);
 				})
 			} else {
-				whereClause[props] = {"$or": []};
+				whereClause[props] = {"$or": [], "$and": {"$not": null}};
 				_.forEach(query[props], (item) => {
 					whereClause[props]["$or"].push(item);
 				})
