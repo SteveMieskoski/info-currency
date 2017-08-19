@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 	console.log();
-	if($("#surveyCheck").text() === 'false'){
+/*	if($("#surveyCheck").text() === 'false'){
 		$('#survey-button-two').addClass("hide-surveys");
 	}
 
@@ -12,7 +12,7 @@ $(document).ready(function () {
 	$('#showCompletedSurveys').on('click', function(){
 		$('#survey-button-two').removeClass("hide-surveys");
 		$('#survey-button-one').removeClass("hide-surveys");
-	});
+	});*/
 
 	$(".nextPage").on("click", function () {
 		if ($("input[value=man]:checked").val() === "man") {
