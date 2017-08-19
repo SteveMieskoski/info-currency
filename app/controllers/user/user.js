@@ -37,23 +37,6 @@ module.exports = {
 	update: function (req, res) {
 		console.log('UPDATE');
 		console.log(req.body);
-		for(let prop in req.body){
-			if(prop === 'zip'){
-				if(!/\[A-Za-z]/.test(req.body.zip)){
-					console.log('zip is ok');
-				}
-			}
-			console.log(req.body[prop]);
-			if(req.body[prop] === "number"){
-				console.log(req.body[prop]);
-			}
-			if(req.body[prop] && (typeof req.body[prop] === "string" || req.body[prop] === "number")){
-				console.log("OK")
-			} else {
-				console.log("NOT OK");
-			}
-		}
-		res.json({});
 	coreQueries.update(req.params.id, req.body)
 			.then((results) => {
 				res.json(results)
