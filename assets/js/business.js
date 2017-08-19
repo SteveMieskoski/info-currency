@@ -32,22 +32,12 @@ $(document).ready(function(){
 				query.age.push($(this).attr("data-value"));
 			}
 		});
+		query.social = $('input#social').prop( "checked" );
+		query.sports = $('input#sports').prop( "checked" );
+		query.movies = $('input#movies').prop( "checked" );
+		query.music = $('input#music').prop( "checked" );
+		query.food = $('input#food').prop( "checked" );
 
-		if(!$('input#social').prop( "checked" )){
-			query.social = false;
-		}
-		if(!$('input#sports').prop( "checked" )){
-			query.sports = false;
-		}
-		if(!$('input#movies').prop( "checked" )){
-			query.movies = false;
-		}
-		if(!$('input#music').prop( "checked" )){
-			query.music = false;
-		}
-		if(!$('input#food').prop( "checked" )){
-			query.food = false;
-		}
 
 		var dynatable = $('#my-final-table').dynatable({
 			dataset: {
