@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Business Home</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/business.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="/assets/js/business.js"></script>
+    <script src="/assets/js/jquery.dynatable.js"></script>
+    <script src="/assets/css/jquery.dynatable.css"></script>
+    <link href="https://fonts.googleapis.com/css?family=Share:400,400i,700,700i" rel="stylesheet">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span><i class="fa fa-user"></i></span>
+            </button>
+            <a target="_blank" href="{{routing.bizDashboard.route}}" class="navbar-brand logo">InfoCurrency</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <strong>User Name</strong>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="navbar-login">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p class="text-center">
+                                            <span class="glyphicon glyphicon-user icon-size"></span>
+                                        <p class="text-left"><strong>User Name</strong></p>
+                                        <p class="text-left small">username@gmail.com</p>
+                                    </div>
+                                    </p>
+                                </div>
+
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="{{routing.logout.route}}" class="btn btn-sm btn-default">
+                                Log Out
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container fluid">
+    <div class="row-margin">
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+
+        <div class="col-md-6">
+            <div class="main main-container">
+                <h2>Information Profile Result</h2>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <b>Gender</b>
+                    </div>
+                    <div class="col-sm-2">
+                        <b>Age</b>
+                    </div>
+                    <div class="col-sm-2">
+                        <b>Income</b>
+                    </div>
+                    <div class="col-sm-2">
+                        <b>Status</b>
+                    </div>
+                    <div class="col-sm-2">
+                        <b>Location</b>
+                    </div>
+                    <div class="col-sm-2">
+                        <b>Interests</b>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <table id="chart-example" class="table table-bordered">
+
+                </table>
+            </div>
+        </div>
+        <div class="col-md-4">
+
+                <div class="main main-container">
+                    <h2>Search Information Profiles</h2>
+                    <hr>
+                    <h3>Demographics</h3>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="button-group">
+                                <button type="button" class="flat-dropdown flat-dropdown-butt" data-toggle="dropdown">
+                                    Gender <span
+                                        class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="gender" data-value="man"/>&nbsp;Male</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="gender" data-value="woman"/>&nbsp;Female</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="gender" data-value="other"/>&nbsp;Other</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="button-group">
+                                <button type="button" class="flat-dropdown flat-dropdown-butt" data-toggle="dropdown">
+                                    Age Bracket<span
+                                        class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="age" data-value="18-24"/>&nbsp;18-24</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox"  class="age" data-value="25-34"/>&nbsp;25-34</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="age" data-value="35-44"/>&nbsp;35-44</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="age" data-value="45-54"/>&nbsp;45-54</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="age" data-value="55-64"/>&nbsp;55-64</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="age" data-value="65+"/>&nbsp;65+</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="button-group">
+                                <button type="button" class="flat-dropdown flat-dropdown-butt" data-toggle="dropdown">
+                                    Household Status
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="household" data-value="Single"/>&nbsp;Single</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="household" data-value="Couple"/>&nbsp;Couple</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="household" data-value="Family"/>&nbsp;Family</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="button-group">
+                                <button type="button" class="flat-dropdown flat-dropdown-butt" data-toggle="dropdown">
+                                    Income Bracket<span
+                                        class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="income" data-value="39,999"/>&nbsp;<$39,999k</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="income"  data-value="40-50"/>&nbsp;$40-50k</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="income" data-value="50-74,999"/>&nbsp;$50-74,999</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="income" data-value="75-99,999"/>&nbsp;$75-99,999</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="income" data-value="125-149,999"/>&nbsp;$125-149,999</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="income" data-value="150-249,999"/>&nbsp;$150-249,999</a>
+                                    </li>
+                                    <li><a href="#" class="small"  tabIndex="-1"><input
+                                            type="checkbox" class="income" data-value="250<"/>&nbsp;$250<</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="button-group">
+                                <button type="button" class="flat-dropdown flat-dropdown-butt" data-toggle="dropdown">
+                                    Location <span
+                                        class="caret"></span></button>
+
+                                <div class="dropdown-menu">
+                                    <div class="form-group">
+                                        <input type="zip" class="form-control" id="zip-code" placeholder="Zip Code">
+                                    </div>
+                                    <div class="range">Radius
+                                        <input type="range" name="range" min="0" max="250" step="25"
+                                               onchange="range.value=value">
+                                        <output id="range">50</output>
+                                        miles
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Interests</h3>
+                    <li class="list-group-item">
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <div class='media-left media-middle'>
+                                    <i class="fa fa-cutlery fa-2x"></i>
+                                </div>
+                                <div id='center'>
+                                    Cooking
+                                    <div id='center' class='material-switch pull-right'>
+                                        <input id='food' name='food' type='checkbox' checked="true"/>
+                                        <label for='food' class='label-primary'></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="media-left media-middle">
+                                    <i class="fa fa-music fa-2x"></i>
+                                </div>
+                                <div id="center">
+                                    Music
+                                    <div id="center" class="material-switch pull-right">
+                                        <div class="material-switch pull-right">
+                                            <input id="music" name="music" type="checkbox" checked="true"/>
+                                            <label for="music" class="label-primary"></label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="media-left media-middle">
+                                    <i class="fa fa-ticket fa-2x"></i>
+                                </div>
+                                <div id="center">
+                                    Movies
+                                    <div id="center" class="material-switch pull-right">
+                                        <div class="material-switch pull-right">
+                                            <input id="movies" name="movies" type="checkbox" checked="true"/>
+                                            <label for="movies" class="label-primary"></label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="media-left media-middle">
+                                    <i class="fa fa-futbol-o fa-2x"></i>
+                                </div>
+                                <div id="center">
+                                    Sports
+                                    <div id="center" class="material-switch pull-right">
+                                        <div class="material-switch pull-right">
+                                            <input id="sports" name="sports" type="checkbox" checked="true"/>
+                                            <label for="sports" class="label-primary"></label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="media-left media-middle">
+                                    <i class="fa fa-facebook fa-2x"></i>
+                                </div>
+                                <div id="center">
+                                    Social Media
+                                    <div id="center" class="material-switch pull-right">
+                                        <div class="material-switch pull-right">
+                                            <input id="social" name="social" type="checkbox" checked="true"/>
+                                            <label for="social" class="label-primary"></label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    </ul>
+                    <input type="submit" class="col submitBtn" value="Submit">
+                </div>
+           <!-- <form method="post" action="search">
+            </form>-->
+        </div>
+
+        <div class="col-md-1">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
